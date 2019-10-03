@@ -24,7 +24,7 @@ function pubCrawl() {
 
 pubCrawl();
 
-$('#by-city').on('click', function(event){
+$('#add-pubInput-btn').on('click', function(event){
   event.preventDefault();
 
   var type = $('#by-type').val().trim();
