@@ -34,6 +34,7 @@ $('#add-pubInput-btn').on('click', function(event){
     method: 'GET'
 }).then(function (response){
     var results = response;
+
     console.log('results', results);
     
     pubs.push(results);
@@ -51,6 +52,7 @@ $('#add-pubInput-btn').on('click', function(event){
   }
   
   pubOutput()
+
 // {/* <div class="card">
 //   <div class="card-body">
 //     <h5 class="card-title">Card title</h5>
