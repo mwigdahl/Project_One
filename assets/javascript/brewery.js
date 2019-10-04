@@ -34,20 +34,23 @@ $('#add-pubInput-btn').on('click', function(event){
     method: 'GET'
 }).then(function (response){
     var results = response;
+    console.log('results', results);
+    
     pubs.push(results);
-  });
     console.log('pubs', pubs);
-    pubOutput()
-
-});
-
-function pubOutput() {
-    var pubCard = $('<div class="card">');
+  });
+    
+  });
+  
+  function pubOutput() {
+    var pubCard = $('<div>');
     pubCard.addClass('card');
-    pubCard.html('<div class="card-body>show something</div>' );
+    pubCard.append('<div class="card-body">' + 'hello!' + '</div>');
+    //pubCard.text('Hello!' );
     $('#pubOutput').append(pubCard);
-}
-
+  }
+  
+  pubOutput()
 // {/* <div class="card">
 //   <div class="card-body">
 //     <h5 class="card-title">Card title</h5>
