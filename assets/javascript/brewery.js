@@ -11,6 +11,7 @@ function buildPubQuery() {
   console.log('state', state);
   console.log('city', city);
   console.log('name', name);
+
   
   let queryURL = 'https://api.openbrewerydb.org/breweries' + 
   '?by_type=' + type + 
