@@ -1,53 +1,61 @@
-// make ajax call
-var type = '';
-var state = '';
-var city = '';
-var name = '';
-var tags = '';
-var pubs = [];
 
-function pubCrawl() {
-  
-  let queryURL = 'https://api.openbrewerydb.org/breweries' + 
-  '?by_type=' + type + 
-  '&by_state=' + state + 
-  '&by_name=' + name + 
-  '&by_name=' + tags + 
-  '&by_city=' + city;
-  $.ajax({
-    url: queryURL,
-    method: 'GET'
-}).then(function (response){
-    console.log(response);
-  });
-}
-
-pubCrawl();
-
-$('#by-city').on('click', function(event){
-  event.preventDefault();
+function buildPubQuery() {
 
   var type = $('#by-type').val().trim();
   var state = $('#by-state').val().trim();
   var city = $('#by-city').val().trim();
   var name = $('#by-name').val().trim();
-  var tags = $('#by-tags').val().trim();
-
+  //var tags = '';
+  
   console.log('type', type);
   console.log('state', state);
   console.log('city', city);
   console.log('name', name);
-  console.log('tags', tags);
 
+  
+  let queryURL = 'https://api.openbrewerydb.org/breweries' + 
+  '?by_type=' + type + 
+  '&by_state=' + state + 
+  '&by_name=' + name + 
+  '&by_city=' + city;
+  console.log('queryurl', queryURL);
+}
 
-  for (var i = 0; i < pubs.length; i++) {
+//submit form data to build url query for api
+$('#add-pubInput-btn').on('click', function(event){
+  event.preventDefault();
+  
+  var queryURL = buildPubQuery();
 
-    $('#pubOutput').empty();
+  $.ajax({
+    url: queryURL,
+    method: 'GET'
+}).then(function (response){
 
-    var pubResults = $('<div>');
-    pubResults.addClass('pubItem');
-    pubResults.text(pubs[i]);
-    pub.push(pubResults);
-  }
+  });
+    
 
 });
+
+
+// for (var i = 0; i < pubs.length; i++) {
+
+//   $('#pubOutput').empty();
+
+//   var pubResults = $('<div>');
+//   pubResults.addClass('pubItem');
+//   pubResults.append(pubs[i]);
+//   //pubs.push(pubs);
+// }
+
+// console.log('pubs', pubs);
+
+// for (var i = 0; i < pubs.length; i++) {
+
+//   //$('#pubOutput').empty();
+//   var pubResults = $('<div>');
+//   pubResults.addClass('pubItem');
+//   pubResults.text
+//   pubResults.append(pubs[i]);
+//   pubs.push(pubs);
+// }
