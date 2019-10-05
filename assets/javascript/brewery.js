@@ -60,6 +60,7 @@ $('#add-pubInput-btn').on('click', function(event){
 
     var pubResults = $('<div>');
     pubResults.addClass('card pubItem card-body col-md-4 m-3');
+    pubResults.attr('data-id', i);
     pubResults.html('<h3>' + pubs[i].name + '</h3>' +
     'Street: ' + pubs[i].street + '<br/>' +
     'Phone: ' + pubs[i].phone + '<br/>' + 
@@ -69,19 +70,21 @@ $('#add-pubInput-btn').on('click', function(event){
     $('#pubOutput').prepend(pubResults);   
 
   }
-  // Not working but want to push selected pub to firebase
-      firebase.database('/pub').ref().push({
-        name: name,
-        street: street,
-        city: city,
-        state: state,
-        lat: lat,
-        long: long,
-      });
   });
     
   });
-  
+
+  $('.btn-primary').on('click', function(){
+    //add to firebase
+    firebase.database('/pub').ref().push({
+      name: name,
+      street: street,
+      city: city,
+      state: state,
+      lat: lat,
+      long: long,
+    });
+  });
 
 
   // brewery_type: "large"
