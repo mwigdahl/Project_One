@@ -57,7 +57,6 @@ $('#add-pubInput-btn').on('click', function(event){
 
       $('#pubOutput').prepend(pubResults);   
       
-    }
     // Not working but want to push selected pub to firebase
         firebase.database('/pub').ref().push({
           name: name,
@@ -71,6 +70,7 @@ $('#add-pubInput-btn').on('click', function(event){
     
   });
   
+
 
   // brewery_type: "large"
   // city: "Boise"
