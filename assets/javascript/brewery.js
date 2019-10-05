@@ -42,7 +42,8 @@ $('#add-pubInput-btn').on('click', function(event){
     url: queryURL,
     method: 'GET'
 }).then(function (response){
-
+    var results = response;
+    
     var pubs = response;
 
     // Set vars
