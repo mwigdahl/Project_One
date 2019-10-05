@@ -59,7 +59,7 @@ $('#add-pubInput-btn').on('click', function(event){
   for (var i = 0; i < pubs.length; i++) { 
 
     var pubResults = $('<div>');
-    pubResults.addClass('card card-body col-md-4 m-3');
+    pubResults.addClass('card pubItem card-body col-md-4 m-3');
     pubResults.html('<h3>' + pubs[i].name + '</h3>' +
     'Street: ' + pubs[i].street + '<br/>' +
     'Phone: ' + pubs[i].phone + '<br/>' + 
