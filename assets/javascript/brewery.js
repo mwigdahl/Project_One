@@ -27,7 +27,8 @@ function buildPubQuery() {
   '&by_state=' + state + 
   '&by_name=' + name + 
   '&by_city=' + city;
-
+ console.log("queryurl", queryURL);
+ 
   return queryURL
 }
 
@@ -42,30 +43,41 @@ $('#add-pubInput-btn').on('click', function(event){
     url: queryURL,
     method: 'GET'
 }).then(function (response){
-    var results = response;
+  var pubs = response;
 
-    console.log('results', results);
+  // Set vars
+  var lat = '';
+  var long = '';
+  var city = '';
+  var state = '';
+  var street = '';
+  var zip = '';
 
-    
-      var pubResults = $('<div>');
-      pubResults.addClass('card card-body');
-      pubResults.html('<h3>' + pubs[i].name + '</h3>' +
-      'Street: ' + pubs[i].street + '<br/>' +
-      'Phone: ' + pubs[i].phone + '<br/>' + 
-      'Website: ' + pubs[i].website_url + 
-      '<button type="button" class="btn btn-primary">Add to PubCrawl</button>');
+  $('#pubOutput').empty();
 
-      $('#pubOutput').prepend(pubResults);   
-      
-    // Not working but want to push selected pub to firebase
-        firebase.database('/pub').ref().push({
-          name: name,
-          street: street,
-          city: city,
-          state: state,
-          lat: lat,
-          long: long,
-        });
+  // Create Pub result cards and print on page
+  for (var i = 0; i < pubs.length; i++) { 
+
+    var pubResults = $('<div>');
+    pubResults.addClass('card pubItem card-body col-md-4 m-3');
+    pubResults.html('<h3>' + pubs[i].name + '</h3>' +
+    'Street: ' + pubs[i].street + '<br/>' +
+    'Phone: ' + pubs[i].phone + '<br/>' + 
+    'Website: ' + pubs[i].website_url + 
+    '<button type="button" class="btn btn-primary">Add to PubCrawl</button>');
+
+    $('#pubOutput').prepend(pubResults);   
+
+  }
+  // Not working but want to push selected pub to firebase
+      firebase.database('/pub').ref().push({
+        name: name,
+        street: street,
+        city: city,
+        state: state,
+        lat: lat,
+        long: long,
+      });
   });
     
   });

@@ -34,6 +34,11 @@ body {
     font: center;
 }
 
+#googleMaps {
+    height: 400px;
+    width: 400px;
+}
+
 @media(max-width:768px){
     #login-dp{
         background-color: inherit;
