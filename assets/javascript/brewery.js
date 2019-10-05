@@ -43,23 +43,9 @@ $('#add-pubInput-btn').on('click', function(event){
     method: 'GET'
 }).then(function (response){
     var results = response;
-    
-    var pubs = response;
-
-    // Set vars
-    var lat = '';
-    var long = '';
-    var city = '';
-    var state = '';
-    var street = '';
-    var zip = '';
-    
-    $('#pubOutput').empty();
-
-    // Create Pub result cards and print on page
-    for (var i = 0; i < pubs.length; i++) {
 
     console.log('results', results);
+
     
       var pubResults = $('<div>');
       pubResults.addClass('card card-body');
@@ -85,39 +71,6 @@ $('#add-pubInput-btn').on('click', function(event){
     
   });
   
-  function pubOutput() {
-    var pubCard = $('<div>');
-    pubCard.addClass('card');
-    pubCard.append('<div class="card-body">' + 'hello!' + '</div>');
-    //pubCard.text('Hello!' );
-    $('#pubOutput').append(pubCard);
-  }
-  
-  pubOutput()
-
-// {/* <div class="card">
-//   <div class="card-body">
-//     <h5 class="card-title">Card title</h5>
-//     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <a href="#" class="card-link">Card link</a>
-//     <a href="#" class="card-link">Another link</a>
-//   </div>
-// </div> */}
-
-// for (var i = 0; i < pubs.length; i++) {
-
-//   $('#pubOutput').empty();
-
-//   var pubResults = $('<div>');
-//   pubResults.addClass('pubItem');
-//   pubResults.append(pubs[i]);
-//   //pubs.push(pubs);
-// }
-
-// console.log('pubs', pubs);
-
-// for (var i = 0; i < pubs.length; i++) {
 
   // brewery_type: "large"
   // city: "Boise"
