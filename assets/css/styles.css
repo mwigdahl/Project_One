@@ -31,7 +31,7 @@ body {
 
 #login-dp .form-group {
     margin-bottom: 10px;
-    display: center;
+    font: center;
 }
 
 @media(max-width:768px){
