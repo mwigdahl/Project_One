@@ -1,26 +1,14 @@
-// API Key AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4
+$(document).ready(function(){
 
-function displayMap(){
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 40.758701, lng: -111.876183};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('googleMaps'), {zoom: 13, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+initMap()
 
-var quaryURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4&v=3&callback=iniMap";
-
-$.ajax({
-    url: quaryURL,
-    method: "GET"
-  }).then(function(response) {
-    console.log(response);
-  });
-
-  var map;
-  function iniMap() {
-      map = new google.maps.Map($("#googleMaps"), {
-          center: {lat: 40.758701, lng: -111.876183},
-          zoom: 13
-      });
-      console.log(map);
-      $("#googleMaps").append(map);
-              
-  };
-iniMap()
-};
-displayMap();
+});
