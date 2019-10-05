@@ -1,24 +1,52 @@
-// API Key AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4
+$(document).ready(function(){
 
-function displayMap(){
+// function initMap() {
+//   // The location of Uluru
+//   var uluru = {lat: 40.758701, lng: -111.876183};
+//   // The map, centered at Uluru
+//   var map = new google.maps.Map(
+//       document.getElementById('googleMaps'), {zoom: 13, center: uluru});
+//   // The marker, positioned at Uluru
+//   var marker = new google.maps.Marker({position: uluru, map: map});
+// }
+// initMap()
 
-var quaryURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4&v=3&callback=iniMap";
 
-$.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
-    console.log(response);
+var map, infoWindow;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('googleMaps'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 6
   });
+  infoWindow = new google.maps.InfoWindow;
 
-  var map;
-  function iniMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-          center: {lat: 40.758701, lng: -111.876183},
-          zoom: 13
-      });            
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      infoWindow.open(map);
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
   }
+}
 
-} 
-
-append iniMap();
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.open(map);
+}
+initMap()
+});
