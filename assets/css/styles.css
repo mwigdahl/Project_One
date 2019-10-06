@@ -8,6 +8,10 @@ footer {
      
 }
 
+#googleMaps {
+size: 1000px;
+}
+
 .my0-col {
     background-image: url("../image/background.jpg")
     
