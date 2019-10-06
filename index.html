@@ -25,89 +25,163 @@
 
 <body>
 
-  <div class="jumb">
-    <div class="jumbotron jumbotron-fluid" style="background-color: darkgray;">
-      <div class="container">
-        <h1 class="display-4">Welcome to Pub Crawl</h1>
-      </div>
-
-      <button class="btn btn-light" id="my-saved-btn">My Saved</button>
-      <button class="btn btn-light" id="login-btn">Login</button>
-
-    </div>
-  </div>
-
-
-  <div class="container">
-
+  <div class="my0-col">
     <div class="row">
+      <div class="col-md-12">
+        <h1>Welcome to Pub Crawl</h1>
+        <!-- Button trigger modal1 -->
+        <button type="button" class="btn btn-dark" id="my-saved-btn" data-toggle="modal" data-target="#exampleModalLong">
+          My Saved Pub's
+        </button>
 
-      <div class="my2-col">
-        <div class="card">
-          <div class="col-md-9">
-            <div class="card-body">
-              <div id="googleMaps"></div>
-              <h6>Maps</h6>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">My Saved Pub's</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="pubCard"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="my1-col">
-        <div class="card">
-          <div class="col-md-3">
-            <div class="card-body">
-              <div id="pubInput">
-                <form>
+        <!-- Modal2 -->
+        <button type="button" class="btn btn-dark" id="login-btn" data-toggle="modal" data-target="#exampleModal">
+          LogIn
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Please LogIn</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form class="px-4 py-3">
                   <div class="form-group">
-                    <label for="by-type">Search by Type of Pub</label>
-                    <input class="form-control" id="by-type" placeholder="search type" type="text">
+                    <label for="exampleDropdownFormEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                      placeholder="email@example.com">
                   </div>
-
                   <div class="form-group">
-                    <label for="by-name">Search by Name</label>
-                    <input class="form-control" id="by-name" placeholder="search name" type="text">
+                    <label for="exampleDropdownFormPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                      placeholder="Password">
                   </div>
-
                   <div class="form-group">
-                    <label for="by-city">Search by City</label>
-                    <input class="form-control" id="by-city" placeholder="search city" type="text">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                      <label class="form-check-label" for="dropdownCheck">
+                        Remember me
+                      </label>
+                    </div>
                   </div>
-
-                  <div class="form-group">
-                    <label for="by-state">Search by State</label>
-                    <input class="form-control" id="by-state" placeholder="search state" type="text">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="by-tag">Search by Tags</label>
-                    <input class="form-control" id="by-tag" placeholder="search tags" type="text">
-                  </div>
-
-                  <button class="btn btn-light" id="add-pubInput-btn">submit</button>
-                  <button class="btn btn-light" id="clear-results">Clear Results</button>
+                  <button type="submit" class="btn btn-primary">Sign in</button>
                 </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">New around here? Sign up</a>
+                <a class="dropdown-item" href="#">Forgot password?</a>
+
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <br>
+  </div>
 
+  <div class="row">
 
-    <div class="row">
-      <div class="my3-col">
-        <div class="card">
-          <div class="col-md-12"></div>
+    <div class="my2-col">
+      <div class="card">
+        <div class="col-md-9">
           <div class="card-body">
-            <h5>Pub's</h5>
-            <div id="pubOutput"></div>
+            <div id="googleMaps"></div>
+            <h6>Maps</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my1-col">
+      <div class="card">
+        <div class="col-md-3">
+          <div class="card-body">
+            <div id="pubInput">
+              <form>
+                <div class="form-group">
+                  <label for="by-type">Search by Type of Pub</label>
+                  <input class="form-control" id="by-type" placeholder="search type" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="by-name">Search by Name</label>
+                  <input class="form-control" id="by-name" placeholder="search name" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="by-city">Search by City</label>
+                  <input class="form-control" id="by-city" placeholder="search city" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="by-state">Search by State</label>
+                  <input class="form-control" id="by-state" placeholder="search state" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="by-tag">Search by Tags</label>
+                  <input class="form-control" id="by-tag" placeholder="search tags" type="text">
+                </div>
+
+                <button class="btn btn-dark" id="add-pubInput-btn">submit</button>
+                <button class="btn btn-dark" id="clear-results">Clear Results</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <br>
+
+
+  <div class="row">
+    <div class="my3-col">
+      <div class="card">
+        <div class="col-md-12"></div>
+        <div class="card-body">
+          <div id="pubOutput"></div>
+          <h5>Pub's</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <br>
+    <br>
+    <br>
+    <br>
+  </footer>
+
 
 
 

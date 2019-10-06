@@ -1,28 +1,46 @@
 
 
 
-body {
+
+
+footer {
     background-image: url("../image/background.jpg")
+     
+}
+
+.my0-col {
+    background-image: url("../image/background.jpg")
+    
+}
+
+
+h1 {
+    font-display: right;
+    color: lightgray;
+}
+
+#putInput {
+    background-color: lightgray;
+}
+
+.my1-col{
+    background-color: lightgray;
+    color: black;
+    width: 25%;
+    
 }
 
 .my2-col {
-    background-color: lightblue; 
+    background-color: lightgray; 
     color: black; 
     width: 75%;
 }
 
-#pubInput {
-    background-color: lightblue; 
-    color: black; 
-    
-
-}
-
 .my3-col {
-    background-color: lightblue; 
+    background-color: lightgray; 
     color: black;
     width: 100% 
-    
-
 }
+
+
 
