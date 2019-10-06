@@ -5,48 +5,24 @@ body {
     background-image: url("../image/background.jpg")
 }
 
+.my2-col {
+    background-color: lightblue; 
+    color: black; 
+    width: 75%;
+}
 
-
-
-.container-fluid{
+#pubInput {
+    background-color: lightblue; 
+    color: black; 
     
+
 }
 
+.my3-col {
+    background-color: lightblue; 
+    color: black;
+    width: 100% 
+    
 
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-}
-#login-dp .help-block{
-    font-size:12px    
-}
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-
-#login-dp .form-group {
-    margin-bottom: 10px;
-    font: center;
-}
-
-#googleMaps {
-    height: 400px;
-    width: 400px;
-}
-
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
 }
 
