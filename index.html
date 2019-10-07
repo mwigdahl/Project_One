@@ -29,10 +29,14 @@
     <div class="row">
       <div class="col-md-12">
         <h1>Welcome to Pub Crawl</h1>
+
+
         <!-- Button trigger modal1 -->
-        <button type="button" class="btn btn-dark" id="my-saved-btn" data-toggle="modal" data-target="#exampleModalLong">
+        <button type="button" class="btn btn-dark" id="my-saved-btn" data-toggle="modal"
+          data-target="#exampleModalLong">
           My Saved Pub's
         </button>
+
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
@@ -113,7 +117,9 @@
         <div class="col-md-9">
           <div class="card-body">
             <div id="googleMaps"></div>
-            <h6>Maps</h6>
+
+            <h6>Map</h6>
+
           </div>
         </div>
       </div>
@@ -136,19 +142,70 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="by-city">Search by City</label>
-                  <input class="form-control" id="by-city" placeholder="search city" type="text">
-                </div>
+
+                  <label for="by-state">Search by city</label>
+                  <input class="form-control" id="by-state" placeholder="search city" type="text">
+
+                 </div>
 
                 <div class="form-group">
-                  <label for="by-state">Search by State</label>
-                  <input class="form-control" id="by-state" placeholder="search state" type="text">
+
+                  <label for="by-cityFormControlSelect2">Search by state</label>
+                  <select multiple class="form-control" id="by-city">
+                    <option value="alabama">Alabama</option>
+                    <option value="alaska">Alaska</option>
+                    <option value="arizona">Arizona</option>
+                    <option value="arkansas">Arkansas</option>
+                    <option value="california">California</option>
+                    <option value="colorado">Colorado</option>
+                    <option value="connecticut">Connecticut</option>
+                    <option value="delaware">Delaware</option>
+                    <option value="districtOfColumbia">District Of Columbia</option>
+                    <option value="florida">Florida</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="hawaii">Hawaii</option>
+                    <option value="idaho">Idaho</option>
+                    <option value="illinois">Illinois</option>
+                    <option value="indiana">Indiana</option>
+                    <option value="iowa">Iowa</option>
+                    <option value="kansas">Kansas</option>
+                    <option value="kentucky">Kentucky</option>
+                    <option value="louisiana">Louisiana</option>
+                    <option value="maine">Maine</option>
+                    <option value="maryland">Maryland</option>
+                    <option value="massachusetts">Massachusetts</option>
+                    <option value="michigan">Michigan</option>
+                    <option value="minnesota">Minnesota</option>
+                    <option value="mississippi">Mississippi</option>
+                    <option value="missouri">Missouri</option>
+                    <option value="montana">Montana</option>
+                    <option value="nebraska">Nebraska</option>
+                    <option value="nevada">Nevada</option>
+                    <option value="newHampshire">New Hampshire</option>
+                    <option value="newJersey">New Jersey</option>
+                    <option value="newMexico">New Mexico</option>
+                    <option value="newYork">New York</option>
+                    <option value="newCarolina">North Carolina</option>
+                    <option value="northDakota">North Dakota</option>
+                    <option value="ohio">Ohio</option>
+                    <option value="oklahoma">Oklahoma</option>
+                    <option value="oregon">Oregon</option>
+                    <option value="pennsylvania">Pennsylvania</option>
+                    <option value="rhodeIsland">Rhode Island</option>
+                    <option value="southCarolina">South Carolina</option>
+                    <option value="southDakota">South Dakota</option>
+                    <option value="tennessee">Tennessee</option>
+                    <option value="texas">Texas</option>
+                    <option value="utah">Utah</option>
+                    <option value="vermont">Vermont</option>
+                    <option value="virginia">Virginia</option>
+                    <option value="washington">Washington</option>
+                    <option value="westVirginia">West Virginia</option>
+                    <option value="wisconsin">Wisconsin</option>
+                    <option value="wyoming">Wyoming</option>
+                  </select>
                 </div>
 
-                <div class="form-group">
-                  <label for="by-tag">Search by Tags</label>
-                  <input class="form-control" id="by-tag" placeholder="search tags" type="text">
-                </div>
 
                 <button class="btn btn-dark" id="add-pubInput-btn">submit</button>
                 <button class="btn btn-dark" id="clear-results">Clear Results</button>
@@ -160,6 +217,10 @@
     </div>
   </div>
   <br>
+
+
+
+
 
 
   <div class="row">

@@ -8,11 +8,21 @@ footer {
      
 }
 
+
+#googleMaps {
+  size: 1000px;
+}
+
+.my0-col {
+    background-image: url("../image/background.jpg")
+    
+
+}
+
 .my0-col {
     background-image: url("../image/background.jpg")
     
 }
-
 
 h1 {
     font-display: right;
@@ -21,6 +31,7 @@ h1 {
 
 #putInput {
     background-color: lightgray;
+
 }
 
 .my1-col{
@@ -41,6 +52,29 @@ h1 {
     color: black;
     width: 100% 
 }
+
+=======
+}
+
+.my1-col{
+    background-color: lightgray;
+    color: black;
+    width: 25%;
+    
+}
+
+.my2-col {
+    background-color: lightgray; 
+    color: black; 
+    width: 75%;
+}
+
+.my3-col {
+    background-color: lightgray; 
+    color: black;
+    width: 100% 
+}
+
 
 
 
