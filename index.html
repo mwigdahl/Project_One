@@ -127,13 +127,20 @@
 
     <div class="my1-col">
       <div class="card">
-        <div class="col-md-3">
+        <div class="col-md-12">
           <div class="card-body">
             <div id="pubInput">
               <form>
                 <div class="form-group">
                   <label for="by-type">Search by Type of Pub</label>
-                  <input class="form-control" id="by-type" placeholder="search type" type="text">
+                  <select class="form-control" id="by-type">
+                    <option value="micro">Micro</option>
+                    <option value="regional">Regional</option>
+                    <option value="brewpub">Brew Pub</option>
+                    <option value="large">Large</option>
+                    <option value="bar">Bar</option>
+                    <option value="proprietor">Proprietor</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -143,15 +150,15 @@
 
                 <div class="form-group">
 
-                  <label for="by-state">Search by city</label>
-                  <input class="form-control" id="by-state" placeholder="search city" type="text">
+                  <label for="by-city">Search by city</label>
+                  <input class="form-control" id="by-city" placeholder="search city" type="text">
 
                  </div>
 
                 <div class="form-group">
 
-                  <label for="by-cityFormControlSelect2">Search by state</label>
-                  <select multiple class="form-control" id="by-city">
+                  <label for="by-statreFormControlSelect2">Search by state</label>
+                  <select class="form-control" id="by-state">
                     <option value="alabama">Alabama</option>
                     <option value="alaska">Alaska</option>
                     <option value="arizona">Arizona</option>
@@ -228,8 +235,8 @@
       <div class="card">
         <div class="col-md-12"></div>
         <div class="card-body">
-          <div id="pubOutput"></div>
-          <h5>Pub's</h5>
+            <h5>Pub's</h5>
+          <div id="pubOutput" class="text-center"></div>
         </div>
       </div>
     </div>
