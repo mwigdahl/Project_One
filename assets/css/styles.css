@@ -75,6 +75,12 @@ h1 {
     width: 100% 
 }
 
+/* ------ Matt's CSS ----- */
 
+.pubItem {
+    float:left;
+    box-sizing: border-box;
+    height:225px;
+}
 
 
