@@ -10,7 +10,7 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,13 +28,12 @@
   <div class="my0-col">
     <div class="row">
       <div class="col-md-12">
-        <h1>Welcome to Pub Crawl</h1>
-
+        <div class="animated slideInRight"><h1>Welcome to Pub Crawl</h1></div>
 
         <!-- Button trigger modal1 -->
         <button type="button" class="btn btn-dark" id="my-saved-btn" data-toggle="modal"
           data-target="#exampleModalLong">
-          My Saved Pub's
+          <div class="animated shake">My Saved Pub's</div>
         </button>
 
 
@@ -54,7 +53,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary remove">Clear</button>
               </div>
             </div>
           </div>
@@ -62,7 +61,7 @@
 
         <!-- Modal2 -->
         <button type="button" class="btn btn-dark" id="login-btn" data-toggle="modal" data-target="#exampleModal">
-          LogIn
+            <div class="animated shake">LogIn</div>
         </button>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
@@ -151,13 +150,13 @@
                 <div class="form-group">
 
                   <label for="by-city">Search by city</label>
-                  <input class="form-control" id="by-city" placeholder="search city" type="text">
+                  <input class="form-control" id="by-state" placeholder="search city" type="text">
 
                  </div>
 
                 <div class="form-group">
 
-                  <label for="by-statreFormControlSelect2">Search by state</label>
+                  <label for="by-stateFormControlSelect2">Search by state</label>
                   <select class="form-control" id="by-state">
                     <option value="alabama">Alabama</option>
                     <option value="alaska">Alaska</option>
@@ -213,9 +212,8 @@
                   </select>
                 </div>
 
-
-                <button class="btn btn-dark" id="add-pubInput-btn">submit</button>
-                <button class="btn btn-dark" id="clear-results">Clear Results</button>
+                <button class="btn btn-dark" id="add-pubInput-btn"><div class="animated shake">submit</div></button>
+                <button class="btn btn-dark" id="clear-results"><div class="animated shake">Clear Results</div></button>
               </form>
             </div>
           </div>
@@ -263,7 +261,10 @@
 
 
 
-
 </body>
-
 </html>
+ 
+  
+  
+  
+ 

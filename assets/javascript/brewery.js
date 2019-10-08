@@ -138,15 +138,22 @@ $('#clear-results').on('click', function () {
 //print saved results to modal
 database.ref().on("child_added", function (snapshot) {
 
-  var result = JSON.stringify(snapshot.val());
+  var result = snapshot.val();
   console.log('result', result);
 
-  for (var j = 0; j < result.length; j++) {
-    var savedPub = $('<div>');
-    savedPub.text(result[j]);
-    $("#pubCard").append(result[j]);
+  Object.keys(result).forEach(key => {
+    
+    result[key];
+    result[key].name;
+    
+    let list = $('<ul>');
+    let pubName = result[key].name;
+    let li = $('<li>')
+    li.text(pubName);
+    list.append(li);
+    $('#pubCard').append(list);
 
-  }
+  })
 
   // Handle the errors
 }, function (errorObject) {
