@@ -19,10 +19,7 @@ $(document).ready(function(){
     {lat: 40.729823, lng: -111.948156},
     {lat: 40.732671, lng: -111.899319}
   ]
-    // Add some markers to the map.
-    // Note: The code uses the JavaScript Array.prototype.map() method to
-    // create an array of markers based on a given "locations" array.
-    // The map() method here has nothing to do with the Google Maps API.
+  
     var markers = locations.map(function(location, i) {
       return new google.maps.Marker({
         position: location,
