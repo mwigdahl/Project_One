@@ -9,22 +9,41 @@ footer {
 }
 
 
+
+
+
+.my0-col {
+    background-image: url("../image/background.jpg")
+
+}
+    
 #googleMaps {
   height: 600px;
   width: 1000px;
 }
 
+
+
+.my0-col {
+    background-image: url("../image/background.jpg")
+    
+
+]
+}
+
 .my0-col {
     background-image: url("../image/background.jpg")
     
 
 }
 
+]
 .my0-col {
     background-image: url("../image/background.jpg")
     
 }
 
+]
 h1 {
     font-display: right;
     color: lightgray;
@@ -32,7 +51,7 @@ h1 {
 
 #putInput {
     background-color: lightgray;
-
+]
 }
 
 .my1-col{
@@ -54,8 +73,7 @@ h1 {
     width: 100% 
 }
 
-=======
-}
+
 
 .my1-col{
     background-color: lightgray;
@@ -75,6 +93,7 @@ h1 {
     color: black;
     width: 100% 
 }
+
 
 /* ------ Matt's CSS ----- */
 
@@ -83,5 +102,6 @@ h1 {
     box-sizing: border-box;
     height:225px;
 }
+
 
 
