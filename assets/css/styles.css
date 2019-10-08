@@ -10,7 +10,8 @@ footer {
 
 
 #googleMaps {
-  size: 1000px;
+  height: 600px;
+  width: 1000px;
 }
 
 .my0-col {
