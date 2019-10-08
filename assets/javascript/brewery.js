@@ -142,18 +142,24 @@ database.ref().on("child_added", function (snapshot) {
   console.log('result', result);
 
   Object.keys(result).forEach(key => {
-    
-    result[key];
+
+    let obj = key;
     result[key].name;
     
     let list = $('<ul>');
     let pubName = result[key].name;
-    let li = $('<li>')
-    li.text(pubName);
+    let li = $('<li>');
+    li.html(pubName);
     list.append(li);
     $('#pubCard').append(list);
 
-  })
+    $('.remove').on('click', function() {
+      database.ref('/pub').remove(obj);
+      
+    });
+  });
+
+    
 
   // Handle the errors
 }, function (errorObject) {
