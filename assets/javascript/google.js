@@ -3,8 +3,8 @@ $(document).ready(function(){
   function initMap() {
 
     var map = new google.maps.Map(document.getElementById('googleMaps'), {
-      zoom: 1,
-      center: {lat: 00, lng: 00}
+      zoom: 4,
+      center: {lat: 39.8283, lng: -98.5795}
     });
 
     // Create an array of alphabetical characters used to label the markers.
