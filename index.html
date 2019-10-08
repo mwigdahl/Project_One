@@ -35,6 +35,8 @@
           data-target="#exampleModalLong">
           My Saved Pub's
         </button>
+
+
         <!-- Modal -->
         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -114,7 +116,9 @@
         <div class="col-md-9">
           <div class="card-body">
             <div id="googleMaps"></div>
+
             <h6>Map</h6>
+
           </div>
         </div>
       </div>
@@ -122,13 +126,20 @@
 
     <div class="my1-col">
       <div class="card">
-        <div class="col-md-3">
+        <div class="col-md-12">
           <div class="card-body">
             <div id="pubInput">
               <form>
                 <div class="form-group">
                   <label for="by-type">Search by Type of Pub</label>
-                  <input class="form-control" id="by-type" placeholder="search type" type="text">
+                  <select class="form-control" id="by-type">
+                    <option value="micro">Micro</option>
+                    <option value="regional">Regional</option>
+                    <option value="brewpub">Brew Pub</option>
+                    <option value="large">Large</option>
+                    <option value="bar">Bar</option>
+                    <option value="proprietor">Proprietor</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -137,14 +148,16 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="by-state">Search by city</label>
-                  <input class="form-control" id="by-state" placeholder="search city" type="text">
-                </div>
 
+                  <label for="by-city">Search by city</label>
+                  <input class="form-control" id="by-city" placeholder="search city" type="text">
+
+                 </div>
 
                 <div class="form-group">
-                  <label for="by-cityFormControlSelect2">Search by state</label>
-                  <select multiple class="form-control" id="by-city">
+
+                  <label for="by-statreFormControlSelect2">Search by state</label>
+                  <select class="form-control" id="by-state">
                     <option value="alabama">Alabama</option>
                     <option value="alaska">Alaska</option>
                     <option value="arizona">Arizona</option>
@@ -213,13 +226,15 @@
 
 
 
+
+
   <div class="row">
     <div class="my3-col">
       <div class="card">
         <div class="col-md-12"></div>
         <div class="card-body">
-          <div id="pubOutput"></div>
-          <h5>Pub's</h5>
+            <h5>Pub's</h5>
+          <div id="pubOutput" class="text-center"></div>
         </div>
       </div>
     </div>
@@ -239,9 +254,29 @@
 
   <script type='text/javascript' src='./assets/javascript/brewery.js'></script>
 
+<<<<<<< HEAD
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4&callback="
     type="text/javascript"></script>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+  </script>
+  
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4&callback="
+  type="text/javascript"></script>
+<<<<<<< HEAD
+=======
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4&callback="
+    type="text/javascript"></script>
+>>>>>>> master
+=======
+>>>>>>> master
+>>>>>>> 5400b92e9cc10f4d92d2f0870f74f9f986ab6f1a
   <script type="text/javascript" src="assets/javascript/google.js"></script>
 </body>
 
