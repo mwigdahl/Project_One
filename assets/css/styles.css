@@ -1,17 +1,8 @@
 
-
-
-
-
 footer {
     background-image: url("../image/background.jpg")
      
 }
-
-
-
-
-
 
 .my0-col {
     background-image: url("../image/background.jpg")
@@ -45,9 +36,6 @@ footer {
 }
 
 
-
-
-
 .my0-col {
     background-image: url("../image/background.jpg")
     
@@ -67,7 +55,7 @@ h1 {
 .my1-col{
     background-color: lightgray;
     color: black;
-
+    height: 100%;
     
 }
 

@@ -62,15 +62,14 @@ $('#add-pubInput-btn').on('click', function (event) {
         '<button type="button" ' + 'data-id=' + i + ' class="btn btn-primary pubBtn">Add to PubCrawl</button>');
 
       $('#pubOutput').append(pubResults);
-// google locations loop to grab lat lng
-      if (pubs[i].latitude !== null && pubs[i].longitude !== null){
-      var tempObj = {lat: parseFloat(pubs[i].latitude), lng: parseFloat(pubs[i].longitude)};
-      locations.push(tempObj);
-      // 
+      // google locations loop to grab lat lng
+      if (pubs[i].latitude !== null && pubs[i].longitude !== null) {
+        var tempObj = { lat: parseFloat(pubs[i].latitude), lng: parseFloat(pubs[i].longitude) };
+        locations.push(tempObj);
+        // 
+      }
     }
-    }
-    console.log(locations);
-    
+
     $('.pubBtn').on('click', function () {
       var addPub = $(this).attr('data-id');
       myPub = pubs[addPub];
@@ -95,24 +94,24 @@ $('#add-pubInput-btn').on('click', function (event) {
       });
       for (var i = 0; i < pubs.length; i++) {
 
-        var tempObj = {lat: pubs[i].latitude, lng: pubs[i].longitude};
+        var tempObj = { lat: pubs[i].latitude, lng: pubs[i].longitude };
         locations.push(tempObj);
-  
+
       }
 
     });
-// displays google map and adds the poin markers
-    var markers = locations.map(function(location, i) {
+    // displays google map and adds the poin markers
+    var markers = locations.map(function (location, i) {
       return new google.maps.Marker({
         position: location,
         label: labels[i % labels.length]
       });
     });
-  
+
     // Add a marker clusterer to manage the markers.
     var markerCluster = new MarkerClusterer(map, markers,
-        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-  // 
+      { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+    // 
   });
 
 });
@@ -121,33 +120,32 @@ $('#add-pubInput-btn').on('click', function (event) {
 
 // function initMap() {
 
-  var map = new google.maps.Map(document.getElementById('googleMaps'), {
-    zoom: 4,
-    center: {lat: 39.8283, lng: -98.5795}
-  });
+var map = new google.maps.Map(document.getElementById('googleMaps'), {
+  zoom: 4,
+  center: { lat: 39.8283, lng: -98.5795 }
+});
 
-  // Create an array of alphabetical characters used to label the markers.
-  var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// Create an array of alphabetical characters used to label the markers.
+var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 
 // };
 
 // Clear search results
 $('#clear-results').on('click', function () {
-  $(this).empty();
+  $("input[type=text]").val("");
 });
 
 //print saved results to modal
 database.ref().on("child_added", function (snapshot) {
 
   var result = snapshot.val();
-  console.log('result', result);
 
   Object.keys(result).forEach(key => {
 
     let obj = key;
     result[key].name;
-    
+
     let list = $('<ul>');
     let pubName = result[key].name;
     let li = $('<li>');
@@ -156,15 +154,13 @@ database.ref().on("child_added", function (snapshot) {
     $('#pubCard').append(list);
 
   });
-      $('.remove').on('click', function() {
-        database.ref('/pub').remove(); 
-      });
+  $('.remove').on('click', function () {
+    database.ref('/pub').remove();
+  });
 
-    
+
 
   // Handle the errors
 }, function (errorObject) {
   console.log("Errors handled: " + errorObject.code);
 });
-
-// initMap()
