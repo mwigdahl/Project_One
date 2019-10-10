@@ -48,18 +48,20 @@ $('#add-pubInput-btn').on('click', function (event) {
     var locations = [];
     // 
     // Create Pub result cards and print on page
+    var title = $('<h2>Pub Search Results</h2>');
+    $('#pubOutput').prepend(title);
     for (var i = 0; i < pubs.length; i++) {
 
       var pubResults = $('<div>');
-      pubResults.addClass('card pubItem card-body col-md-3 m-1');
+      pubResults.addClass('card pubItem card-body col-md-4 p-2');
       pubResults.attr('data-id', i);
       pubResults.html('<h3>' + pubs[i].name + '</h3>' +
         'Street: ' + pubs[i].street + '<br/>' +
         'Phone: ' + pubs[i].phone + '<br/>' +
-        'Website: ' + pubs[i].website_url +
+        '<a target="_blank" href="' + pubs[i].website_url + '">Website</a>' +
         '<button type="button" ' + 'data-id=' + i + ' class="btn btn-primary pubBtn">Add to PubCrawl</button>');
 
-      $('#pubOutput').prepend(pubResults);
+      $('#pubOutput').append(pubResults);
 // google locations loop to grab lat lng
       if (pubs[i].latitude !== null && pubs[i].longitude !== null){
       var tempObj = {lat: parseFloat(pubs[i].latitude), lng: parseFloat(pubs[i].longitude)};
@@ -153,11 +155,10 @@ database.ref().on("child_added", function (snapshot) {
     list.append(li);
     $('#pubCard').append(list);
 
-    $('.remove').on('click', function() {
-      database.ref('/pub').remove(obj);
-      
-    });
   });
+      $('.remove').on('click', function() {
+        database.ref('/pub').remove(); 
+      });
 
     
 
