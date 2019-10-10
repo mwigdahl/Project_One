@@ -2,269 +2,269 @@
 <html lang="en">
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <title>Project One</title>
+  </head>
 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+  <body>
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <title>Project One</title>
-</head>
-
-<body>
-
-  <div class="my0-col">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="animated slideInRight"><h1>Welcome to Pub Crawl</h1></div>
-
-        <!-- Button trigger modal1 -->
-        <button type="button" class="btn btn-dark" id="my-saved-btn" data-toggle="modal"
-          data-target="#exampleModalLong">
-          <div class="animated shake">My Saved Pub's</div>
-        </button>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-          aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">My Saved Pub's</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div id="pubCard"></div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary remove">Clear</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal2 -->
-        <button type="button" class="btn btn-dark" id="login-btn" data-toggle="modal" data-target="#exampleModal">
-            <div class="animated shake">LogIn</div>
-        </button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Please LogIn</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-
-                <form class="px-4 py-3">
-                  <div class="form-group">
-                    <label for="exampleDropdownFormEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
-                      placeholder="email@example.com">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleDropdownFormPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword1"
-                      placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                      <label class="form-check-label" for="dropdownCheck">
-                        Remember me
-                      </label>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Sign in</button>
-                </form>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">New around here? Sign up</a>
-                <a class="dropdown-item" href="#">Forgot password?</a>
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-
-    <div class="my2-col">
-      <div class="card">
-        <div class="col-md-9">
-          <div class="card-body">
-            <div id="googleMaps"></div>
-
-            <h6>Map</h6>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="my1-col">
-      <div class="card">
+    <div class="my0-col">
+      <div class="row">
         <div class="col-md-12">
-          <div class="card-body">
-            <div id="pubInput">
-              <form>
-                <div class="form-group">
-                  <label for="by-type">Search by Type of Pub</label>
-                  <select class="form-control" id="by-type">
-                    <option value="micro">Micro</option>
-                    <option value="regional">Regional</option>
-                    <option value="brewpub">Brew Pub</option>
-                    <option value="large">Large</option>
-                    <option value="bar">Bar</option>
-                    <option value="proprietor">Proprietor</option>
-                    </select>
+          <div class="animated slideInRight"><h1>Welcome to Pub Crawl</h1></div>
+          <!-- Button trigger modal1 -->
+          <button type="button" class="btn btn-dark" id="my-saved-btn"
+            data-toggle="modal"
+            data-target="#exampleModalLong">
+            <div class="animated shake">My Saved Pub's</div>
+          </button>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalLong" tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">My Saved
+                    Pub's</h5>
+                  <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-
-                <div class="form-group">
-                  <label for="by-name">Search by Name</label>
-                  <input class="form-control" id="by-name" placeholder="search name" type="text">
+                <div class="modal-body">
+                  <div id="pubCard"></div>
                 </div>
-
-                <div class="form-group">
-
-                  <label for="by-city">Search by city</label>
-                  <input class="form-control" id="by-city" placeholder="search city" type="text">
-
-                 </div>
-
-                <div class="form-group">
-
-                  <label for="by-stateFormControlSelect2">Search by state</label>
-                  <select class="form-control" id="by-state">
-                    <option value="alabama">Alabama</option>
-                    <option value="alaska">Alaska</option>
-                    <option value="arizona">Arizona</option>
-                    <option value="arkansas">Arkansas</option>
-                    <option value="california">California</option>
-                    <option value="colorado">Colorado</option>
-                    <option value="connecticut">Connecticut</option>
-                    <option value="delaware">Delaware</option>
-                    <option value="districtOfColumbia">District Of Columbia</option>
-                    <option value="florida">Florida</option>
-                    <option value="georgia">Georgia</option>
-                    <option value="hawaii">Hawaii</option>
-                    <option value="idaho">Idaho</option>
-                    <option value="illinois">Illinois</option>
-                    <option value="indiana">Indiana</option>
-                    <option value="iowa">Iowa</option>
-                    <option value="kansas">Kansas</option>
-                    <option value="kentucky">Kentucky</option>
-                    <option value="louisiana">Louisiana</option>
-                    <option value="maine">Maine</option>
-                    <option value="maryland">Maryland</option>
-                    <option value="massachusetts">Massachusetts</option>
-                    <option value="michigan">Michigan</option>
-                    <option value="minnesota">Minnesota</option>
-                    <option value="mississippi">Mississippi</option>
-                    <option value="missouri">Missouri</option>
-                    <option value="montana">Montana</option>
-                    <option value="nebraska">Nebraska</option>
-                    <option value="nevada">Nevada</option>
-                    <option value="newHampshire">New Hampshire</option>
-                    <option value="newJersey">New Jersey</option>
-                    <option value="newMexico">New Mexico</option>
-                    <option value="newYork">New York</option>
-                    <option value="newCarolina">North Carolina</option>
-                    <option value="northDakota">North Dakota</option>
-                    <option value="ohio">Ohio</option>
-                    <option value="oklahoma">Oklahoma</option>
-                    <option value="oregon">Oregon</option>
-                    <option value="pennsylvania">Pennsylvania</option>
-                    <option value="rhodeIsland">Rhode Island</option>
-                    <option value="southCarolina">South Carolina</option>
-                    <option value="southDakota">South Dakota</option>
-                    <option value="tennessee">Tennessee</option>
-                    <option value="texas">Texas</option>
-                    <option value="utah">Utah</option>
-                    <option value="vermont">Vermont</option>
-                    <option value="virginia">Virginia</option>
-                    <option value="washington">Washington</option>
-                    <option value="westVirginia">West Virginia</option>
-                    <option value="wisconsin">Wisconsin</option>
-                    <option value="wyoming">Wyoming</option>
-                  </select>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary"
+                    data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary remove">Clear</button>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <button class="btn btn-dark" id="add-pubInput-btn"><div class="animated shake">submit</div></button>
-                <button class="btn btn-dark" id="clear-results"><div class="animated shake">Clear Results</div></button>
-              </form>
+          <!-- Modal2 -->
+          <button type="button" class="btn btn-dark" id="login-btn"
+            data-toggle="modal" data-target="#exampleModal">
+            <div class="animated shake">LogIn</div>
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Please LogIn</h5>
+                  <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form class="px-4 py-3">
+                    <div class="form-group">
+                      <label for="exampleDropdownFormEmail1">Email address</label>
+                      <input type="email" class="form-control"
+                        id="exampleDropdownFormEmail1"
+                        placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleDropdownFormPassword1">Password</label>
+                      <input type="password" class="form-control"
+                        id="exampleDropdownFormPassword1"
+                        placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input"
+                          id="dropdownCheck">
+                        <label class="form-check-label" for="dropdownCheck">
+                          Remember me
+                        </label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">New around here? Sign up</a>
+                  <a class="dropdown-item" href="#">Forgot password?</a>
+
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <br>
 
+    <div class="row">
 
+      <div class="my2-col col-md-9 p-0">
+        <div class="">
+          <div id="googleMaps"></div>
 
+        </div>
+      </div>
 
+      <div class="my1-col col-md-3 p-0">
+        <div class="card">
+          <div class="col-md-12">
+            <div class="card-body">
+              <div id="pubInput">
+                <form>
+                  <div class="form-group">
+                    <label for="by-type">Search by Type of Pub</label>
+                    <select class="form-control" id="by-type">
+                      <option value="micro">Micro</option>
+                      <option value="regional">Regional</option>
+                      <option value="brewpub">Brew Pub</option>
+                      <option value="large">Large</option>
+                      <option value="bar">Bar</option>
+                      <option value="proprietor">Proprietor</option>
+                    </select>
+                  </div>
 
+                  <div class="form-group">
+                    <label for="by-name">Search by Name</label>
+                    <input class="form-control" id="by-name" placeholder="search
+                      name" type="text">
+                  </div>
 
-  <div class="row">
-    <div class="my3-col">
-      <div class="card">
-        <div class="col-md-12"></div>
-        <div class="card-body">
-            <h5>Pub's</h5>
-          <div id="pubOutput" class="text-center"></div>
+                  <div class="form-group">
+
+                    <label for="by-city">Search by city</label>
+                    <input class="form-control" id="by-city" placeholder="search
+                      city" type="text">
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="by-stateFormControlSelect2">Search by state</label>
+                    <select class="form-control" id="by-state">
+                      <option value="alabama">Alabama</option>
+                      <option value="alaska">Alaska</option>
+                      <option value="arizona">Arizona</option>
+                      <option value="arkansas">Arkansas</option>
+                      <option value="california">California</option>
+                      <option value="colorado">Colorado</option>
+                      <option value="connecticut">Connecticut</option>
+                      <option value="delaware">Delaware</option>
+                      <option value="districtOfColumbia">District Of Columbia</option>
+                      <option value="florida">Florida</option>
+                      <option value="georgia">Georgia</option>
+                      <option value="hawaii">Hawaii</option>
+                      <option value="idaho">Idaho</option>
+                      <option value="illinois">Illinois</option>
+                      <option value="indiana">Indiana</option>
+                      <option value="iowa">Iowa</option>
+                      <option value="kansas">Kansas</option>
+                      <option value="kentucky">Kentucky</option>
+                      <option value="louisiana">Louisiana</option>
+                      <option value="maine">Maine</option>
+                      <option value="maryland">Maryland</option>
+                      <option value="massachusetts">Massachusetts</option>
+                      <option value="michigan">Michigan</option>
+                      <option value="minnesota">Minnesota</option>
+                      <option value="mississippi">Mississippi</option>
+                      <option value="missouri">Missouri</option>
+                      <option value="montana">Montana</option>
+                      <option value="nebraska">Nebraska</option>
+                      <option value="nevada">Nevada</option>
+                      <option value="newHampshire">New Hampshire</option>
+                      <option value="newJersey">New Jersey</option>
+                      <option value="newMexico">New Mexico</option>
+                      <option value="newYork">New York</option>
+                      <option value="newCarolina">North Carolina</option>
+                      <option value="northDakota">North Dakota</option>
+                      <option value="ohio">Ohio</option>
+                      <option value="oklahoma">Oklahoma</option>
+                      <option value="oregon">Oregon</option>
+                      <option value="pennsylvania">Pennsylvania</option>
+                      <option value="rhodeIsland">Rhode Island</option>
+                      <option value="southCarolina">South Carolina</option>
+                      <option value="southDakota">South Dakota</option>
+                      <option value="tennessee">Tennessee</option>
+                      <option value="texas">Texas</option>
+                      <option value="utah">Utah</option>
+                      <option value="vermont">Vermont</option>
+                      <option value="virginia">Virginia</option>
+                      <option value="washington">Washington</option>
+                      <option value="westVirginia">West Virginia</option>
+                      <option value="wisconsin">Wisconsin</option>
+                      <option value="wyoming">Wyoming</option>
+                    </select>
+                  </div>
+
+                  <button class="btn btn-dark" id="add-pubInput-btn"><div
+                      class="animated shake">submit</div></button>
+                  <button class="btn btn-dark" id="clear-results"><div
+                      class="animated shake">Clear Results</div></button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-
-  <footer>
     <br>
-    <br>
-    <br>
-    <br>
-  </footer>
 
 
 
-  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+
+
+
+    <div class="row">
+      <div class="container">
+        <div class="">
+          <div class="col-md-12"></div>
+          <div class="">
+            <div id="pubOutput" class="text-center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+      <br>
+      <br>
+      <br>
+      <br>
+    </footer>
+
+
+
+    <script
+      src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
   </script>
-  
-  <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4&callback="
-  type="text/javascript"></script>
-
-  <script type='text/javascript' src='./assets/javascript/brewery.js'></script>
-
-
-
-
-</body>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF2Mgr4QclaeCPJZ4yfzgPxhLYTeHOFJ4&callback="type="text/javascript"></script>
+    <script type='text/javascript' src='./assets/javascript/brewery.js'></script>
+  </body>
 </html>
- 
-  
-  
-  
- 
